@@ -1,0 +1,15 @@
+# For more information: https://laravel.com/docs/sail
+version: '3.7'
+services:
+  nmap_ui:
+    container_name: nmap_ui
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    ports:
+      - 3001:3000
+    environment:
+      - CHOKIDAR_USEPOLLING=true
