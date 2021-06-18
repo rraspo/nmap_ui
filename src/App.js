@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Container, Grid, Header, Icon, Label, Menu, Table } from 'semantic-ui-react'
+import { Container, Grid, Header, Icon, Label, Menu, Table } from 'semantic-ui-react';
 
 function Dashboard() {
   return (
