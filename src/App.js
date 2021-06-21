@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Grid, Header, Icon, Label, Menu, Table } from 'semantic-ui-react';
+import { Container, Grid, Header, Icon, Menu, Table } from 'semantic-ui-react';
 
 function Dashboard() {
   return (
@@ -23,7 +23,7 @@ function Dashboard() {
             <Table.Body>
               <Table.Row>
                 <Table.Cell>
-                  <Label ribbon>First</Label>Cell
+                  Cell
                 </Table.Cell>
                 <Table.Cell>Cell</Table.Cell>
                 <Table.Cell>Cell</Table.Cell>
