@@ -1,67 +1,38 @@
 import React from 'react';
-import { Container, Grid, Header, Icon, Menu, Table } from 'semantic-ui-react';
+import Dashboard from './components/Dashboard';
+import Form from './components/Form';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom';
+import { Menu } from 'semantic-ui-react';
 
-function Dashboard() {
+
+function App() {
+
   return (
-    <Container style={{ marginTop: '3em' }}>
-      <Header as='h1'>
-        NMAP dashboard
-      </Header>
-      <Header as='h2' dividing>
-        Scans
-      </Header>
-      <Grid columns={1}>
-        <Grid.Column>
-          <Table>
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell>Header</Table.HeaderCell>
-                <Table.HeaderCell>Header</Table.HeaderCell>
-                <Table.HeaderCell>Header</Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              <Table.Row>
-                <Table.Cell>
-                  Cell
-                </Table.Cell>
-                <Table.Cell>Cell</Table.Cell>
-                <Table.Cell>Cell</Table.Cell>
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell>Cell</Table.Cell>
-                <Table.Cell>Cell</Table.Cell>
-                <Table.Cell>Cell</Table.Cell>
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell>Cell</Table.Cell>
-                <Table.Cell>Cell</Table.Cell>
-                <Table.Cell>Cell</Table.Cell>
-              </Table.Row>
-            </Table.Body>
-            <Table.Footer>
-              <Table.Row>
-                <Table.HeaderCell colSpan='3'>
-                  <Menu floated='right' pagination>
-                    <Menu.Item as='a' icon>
-                      <Icon name='chevron left' />
-                    </Menu.Item>
-                    <Menu.Item as='a'>1</Menu.Item>
-                    <Menu.Item as='a'>2</Menu.Item>
-                    <Menu.Item as='a'>3</Menu.Item>
-                    <Menu.Item as='a'>4</Menu.Item>
-                    <Menu.Item as='a' icon>
-                      <Icon name='chevron right' />
-                    </Menu.Item>
-                  </Menu>
-                </Table.HeaderCell>
-              </Table.Row>
-            </Table.Footer>
-          </Table>
-        </Grid.Column>
-      </Grid>
-    </Container>
+    <Router>
+      <Menu secondary>
+        <Menu.Item
+          name='home'
+          href='/'
+        />
+        <Menu.Item
+          name='scans'
+          href='/scans'
+        />
+      </Menu>
+      <Switch>
+        <Route path='/scans'>
+          <Dashboard />
+        </Route>
+        <Route path='/'>
+          <Form />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
-export default Dashboard;
+export default App;
